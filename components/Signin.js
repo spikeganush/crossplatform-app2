@@ -1,14 +1,72 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  TextInput,
+  TouchableOpacity,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native'
+import { useNavigation } from '@react-navigation/native'
+import { ThemeColours } from './ThemeColours'
 
-const Signin = () => {
+export function Signin(props) {
+  const navigation = useNavigation()
   return (
-    <View>
-      <Text></Text>
+    <View style={styles.container}>
+      <Text>Sign up</Text>
+      <KeyboardAvoidingView
+        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+      >
+        <View style={styles.inner}>
+          <Text>Email</Text>
+          <TextInput style={styles.input} />
+          <Text>Password</Text>
+          <TextInput style={styles.input} />
+          <TouchableOpacity style={styles.button}>
+            <Text style={styles.buttonText}>Sign up</Text>
+          </TouchableOpacity>
+          <Text>Don't have an account?</Text>
+          <Button
+            title="Sign up for an account"
+            onPress={() => navigation.navigate('Signup')}
+          />
+        </View>
+      </KeyboardAvoidingView>
     </View>
   )
 }
 
-export default Signin
-
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  input: {
+    backgroundColor: ThemeColours.cultured,
+    fontSize: 16,
+    padding: 5,
+    borderRadius: 4,
+  },
+  button: {
+    marginVertical: 15,
+    backgroundColor: ThemeColours.cerise,
+    padding: 10,
+    borderRadius: 10,
+  },
+  container: {
+    flex: 1,
+    backgroundColor: ThemeColours.cerulean,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: ThemeColours.cultured,
+    textAlign: 'center',
+  },
+  inner: {
+    width: 300,
+    marginBottom: 90,
+  },
+  kb: {
+    flex: 1,
+  },
+})

@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "crossplatform-app2",
-    "slug": "crossplatform-app2",
+    "name": "myapp2",
+    "slug": "myapp2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

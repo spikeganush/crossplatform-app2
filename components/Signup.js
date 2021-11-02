@@ -1,40 +1,63 @@
 import React from 'react'
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import { View, Text, StyleSheet, Button, TextInput, TouchableOpacity, KeyboardAvoidingView, Platform } from "react-native";
+import { useNavigation } from '@react-navigation/native';
+import { ThemeColours } from './ThemeColours';
 
-const Signup = () => {
+export function Signup(props) {
+
   const navigation = useNavigation()
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Sign up</Text>
-      <TouchableOpacity
-        style={styles.signinBtn}
-        onPress={() => navigation.navigate('Signin')}
+      <Text>Sign up</Text>
+      <KeyboardAvoidingView 
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
       >
-        <Text>Click here to Sign in</Text>
-      </TouchableOpacity>
+      <View style={styles.inner}>
+        <Text>Email</Text>
+        <TextInput style={styles.input} />
+        <Text>Password</Text>
+        <TextInput style={styles.input} />
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Sign up</Text>
+        </TouchableOpacity>
+        <Text>Already have an account?</Text>
+        <Button title="Click here to sign in" onPress={() => navigation.navigate("Signin")} />
+      </View>
+      </KeyboardAvoidingView>
+      
     </View>
   )
 }
 
-export default Signup
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const styles = StyleSheet.create( {
+  input: {
+    backgroundColor: ThemeColours.cultured,
+    fontSize: 16,
+    padding: 5,
+    borderRadius: 4,
   },
-  title: {
-    fontSize: 30,
-    fontWeight: 'bold',
-  },
-  signinBtn: {
-    marginTop: 10,
+  button: {
+    marginVertical: 15,
+    backgroundColor: ThemeColours.cerise,
     padding: 10,
-    backgroundColor: 'lightblue',
     borderRadius: 10,
   },
+  container: {
+    flex: 1,
+    backgroundColor: ThemeColours.turquoise,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  buttonText: {
+    color: ThemeColours.cultured,
+    textAlign: 'center',
+  },
+  inner: {
+    width: 300,
+    marginBottom: 90,
+  },
+  kb: {
+    flex: 1,
+  }
 })

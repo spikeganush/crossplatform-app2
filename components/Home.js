@@ -1,14 +1,10 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { View, Text, StyleSheet } from "react-native";
 
-const Home = () => {
-  return (
+export function Home ( props ) {
+  return(
     <View>
-      <Text></Text>
+      <Text>Home</Text>
     </View>
   )
 }
-
-export default Home
-
-const styles = StyleSheet.create({})
