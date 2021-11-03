@@ -1,9 +1,8 @@
 export const firebaseConfig = {
-  apiKey: "AIzaSyATxusSxp8STkXjZUq-mjcFJTCzpDJAfM0",
-  authDomain: "rnfirebase-6595f.firebaseapp.com",
-  projectId: "rnfirebase-6595f",
-  storageBucket: "rnfirebase-6595f.appspot.com",
-  messagingSenderId: "474956507607",
-  appId: "1:474956507607:web:0752b692918fc36c460392",
-  measurementId: "G-Q9F6GZN297"
+  apiKey: 'AIzaSyBU7mlLbebr4cIl1V0-GGPgOwVTcQtfX_0',
+  authDomain: 'crossplatform-ait.firebaseapp.com',
+  projectId: 'crossplatform-ait',
+  storageBucket: 'crossplatform-ait.appspot.com',
+  messagingSenderId: '56600195740',
+  appId: '1:56600195740:web:3531ae4fd20deeca193359',
 }
